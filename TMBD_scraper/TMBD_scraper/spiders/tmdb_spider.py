@@ -1,5 +1,5 @@
 # to run 
-# scrapy crawl tmdb_spider -o movies.csv
+# scrapy crawl tmdb_spider -O movies.csv
 
 import scrapy
 
@@ -24,7 +24,7 @@ class TmdbSpider(scrapy.Spider):
         
     def parse_full_credits(self, response):
         '''
-        This method assumes you start on the description page for a film / TV show.
+        This method assumes you start on the casting page for a film / TV show.
         It then scrapes all the cast for the film / TV show. It does not scrape the crew.
         For each cast member, this method navigates to the bio page for the actor, where
         it conducts the parse_actor_page method.
